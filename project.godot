@@ -11,14 +11,17 @@ config_version=5
 [application]
 
 config/name="Nuevo Proyecto de Juego"
+run/main_scene="uid://ccu0010wrlx8d"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=480
-window/stretch/mode="canvas_items"
+window/size/viewport_width=426
+window/size/viewport_height=240
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
 
 [input]
 
