@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb04lb0p2l2ee"
-path="res://.godot/imported/Layer_0008_3.png-0b9106f4c6447ac604aa3df628711f1f.ctex"
+uid="uid://dvbd5otj1w5bs"
+path="res://.godot/imported/KiwiAlone.png-80faed9bb6705a6f6dc1ca953d11202d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Parallax/Background layers/Layer_0008_3.png"
-dest_files=["res://.godot/imported/Layer_0008_3.png-0b9106f4c6447ac604aa3df628711f1f.ctex"]
+source_file="res://Assets/Items/Fruits/KiwiAlone.png"
+dest_files=["res://.godot/imported/KiwiAlone.png-80faed9bb6705a6f6dc1ca953d11202d.ctex"]
 
 [params]
 

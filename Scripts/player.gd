@@ -20,6 +20,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= JUMP
 	
 	if !is_on_floor():
+		$AnimatedSprite2D.play("jump")
 		velocity.y += GRAVITY
+		
 	move_and_slide()
+	
+func add_kiwi():
+	pass
 	
