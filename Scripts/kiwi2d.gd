@@ -1,8 +1,6 @@
 extends Area2D
 
-signal kiwiCollected
-
-func _on_body_entered(body: Node2D):
-	if body.get_name() == "Player":
-		emit_signal("kiwiCollected")
+func _on_body_entered(body):
+	if body.name == "Player":
+		GameManager.add_kiwi()
 		queue_free()
