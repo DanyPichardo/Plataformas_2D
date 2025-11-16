@@ -1,6 +1,7 @@
 extends Node
 
 signal kiwi_count_changed(new_count)
+signal lives_chanes
 var kiwi_count: int = 0
 
 func add_kiwi():
