@@ -40,11 +40,8 @@ func _physics_process(_delta: float) -> void:
 					die()
 
 func die():
-	call_deferred("deferred_die")
-	
-func deferred_die():
-	if get_tree():
-		get_tree().reload_current_scene()
+	GameManager.decrease_lives()
+	queue_free()
 		
 func bounce():
 	is_bouncing = true
