@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Nuevo Proyecto de Juego"
-run/main_scene="uid://dkpmc140hynmr"
+config/name="Practica_02"
+run/main_scene="uid://ccu0010wrlx8d"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

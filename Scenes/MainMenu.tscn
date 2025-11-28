@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccu0010wrlx8d"]
+[gd_scene load_steps=3 format=3 uid="uid://ccu0010wrlx8d"]
 
 [ext_resource type="Script" uid="uid://bdxsyu4qom04m" path="res://Scripts/main_menu.gd" id="1_853f1"]
-[ext_resource type="Script" uid="uid://dvsibat5np641" path="res://Scripts/options_menu.gd" id="2_8saeu"]
 [ext_resource type="Texture2D" uid="uid://d4maktkawkqvp" path="res://Assets/Background/mainMenu_BG.png" id="2_ghw46"]
 
 [node name="MainMenu" type="Control"]
@@ -20,69 +19,27 @@ expand_mode = 3
 
 [node name="ContainerMenu" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.97700006
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.97700006
 offset_left = -52.0
-offset_top = -101.0
+offset_top = -75.48001
 offset_right = 52.0
+offset_bottom = -1.480011
 grow_horizontal = 2
 grow_vertical = 0
-alignment = 2
+alignment = 1
 
 [node name="Start" type="Button" parent="ContainerMenu"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Iniciar Juego"
-
-[node name="Options" type="Button" parent="ContainerMenu"]
-layout_mode = 2
-text = "Opciones"
 
 [node name="Exit" type="Button" parent="ContainerMenu"]
 layout_mode = 2
 text = "Salir"
 
-[node name="OptionsMenu" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 424.0
-offset_bottom = 240.0
-script = ExtResource("2_8saeu")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -85.0
-offset_top = -113.0
-offset_right = 85.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Volume" type="Label" parent="OptionsMenu/VBoxContainer"]
-layout_mode = 2
-text = "Volumen General"
-
-[node name="VolumeSlide" type="HSlider" parent="OptionsMenu/VBoxContainer"]
-layout_mode = 2
-
-[node name="Fullscreen" type="CheckBox" parent="OptionsMenu/VBoxContainer"]
-layout_mode = 2
-text = "Pantalla Completa"
-
-[node name="Return" type="Button" parent="OptionsMenu/VBoxContainer"]
-layout_mode = 2
-text = "Volver"
-
 [connection signal="pressed" from="ContainerMenu/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="ContainerMenu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="ContainerMenu/Exit" to="." method="_on_exit_pressed"]
-[connection signal="value_changed" from="OptionsMenu/VBoxContainer/VolumeSlide" to="OptionsMenu" method="_on_volume_slide_value_changed"]
-[connection signal="toggled" from="OptionsMenu/VBoxContainer/Fullscreen" to="OptionsMenu" method="_on_fullscreen_toggled"]
-[connection signal="pressed" from="OptionsMenu/VBoxContainer/Return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="OptionsMenu/VBoxContainer/Return" to="OptionsMenu" method="_on_return_pressed"]

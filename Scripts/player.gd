@@ -5,6 +5,9 @@ var PLAYER_DIRECCION := 0.0
 var JUMP := 250
 const GRAVITY := 9
 var is_bouncing := false
+var win_mode := false
+var win_jump_timer := 0.0
+var win_jump_interval := 0.6
 
 func _physics_process(_delta: float) -> void:
 	PLAYER_DIRECCION = Input.get_axis("move_left","move_right")
@@ -33,11 +36,18 @@ func _physics_process(_delta: float) -> void:
 			var collision = get_slide_collision(i)
 			var collider = collision.get_collider()
 			
-			if collider.is_in_group("Enemy"):
+			if collider.is_in_group("enemy"):
 				var normal = collision.get_normal()
 				
 				if normal.y > -0.5:
 					die()
+					
+	if win_mode:
+		PLAYER_SPEED = 0
+		win_jump_timer += _delta
+		if win_jump_timer >= win_jump_interval:
+			win_jump_timer = 0.0
+			velocity.y = -JUMP
 
 func die():
 	GameManager.decrease_lives()
@@ -51,3 +61,7 @@ func bounce():
 func disable_bounce():
 	await get_tree().create_timer(0.2).timeout
 	is_bouncing = false
+	
+func win_jump():
+	win_mode = true
+	velocity.y = -JUMP

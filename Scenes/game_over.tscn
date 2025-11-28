@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuyiv4nftj34a"]
+[gd_scene load_steps=5 format=3 uid="uid://cuyiv4nftj34a"]
 
 [ext_resource type="Script" uid="uid://q88hg817l33f" path="res://Scripts/game_over.gd" id="1_8fo1c"]
 [ext_resource type="Texture2D" uid="uid://6e1kkrlqsnee" path="res://Assets/Menu/Buttons/Restart.png" id="2_ek8ke"]
+[ext_resource type="Texture2D" uid="uid://ds6gn83xmf0on" path="res://Assets/Items/home.png" id="3_eoghk"]
+[ext_resource type="Texture2D" uid="uid://goqtf8dgk80e" path="res://Assets/Menu/Buttons/Close.png" id="4_14u15"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -23,19 +25,42 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 115.0
-offset_top = 56.0
-offset_right = 313.0
-offset_bottom = 107.0
-text = "Pipipi-pirdisti"
+offset_left = 127.0
+offset_top = 48.0
+offset_right = 296.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 35
+text = "Perdiste :("
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="RestartButton" type="Button" parent="."]
+process_mode = 3
 layout_mode = 0
-offset_left = 144.0
-offset_top = 160.0
-offset_right = 284.0
-offset_bottom = 191.0
-text = "Volver a jugar"
+offset_left = 198.0
+offset_top = 124.0
+offset_right = 227.0
+offset_bottom = 155.0
 icon = ExtResource("2_ek8ke")
+
+[node name="MenuButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 198.0
+offset_top = 159.0
+offset_right = 228.0
+offset_bottom = 190.0
+icon = ExtResource("3_eoghk")
+
+[node name="ExitButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 202.0
+offset_top = 195.0
+offset_right = 225.0
+offset_bottom = 219.0
+icon = ExtResource("4_14u15")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

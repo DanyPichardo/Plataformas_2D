@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4cuhthxadq61"]
+[gd_scene load_steps=5 format=3 uid="uid://c4cuhthxadq61"]
 
 [ext_resource type="Script" uid="uid://bjynb11fyv5vq" path="res://Scripts/hud.gd" id="1_fccik"]
 [ext_resource type="Texture2D" uid="uid://dvbd5otj1w5bs" path="res://Assets/Items/Fruits/KiwiAlone.png" id="2_bjfho"]
 [ext_resource type="Texture2D" uid="uid://dfsb8p38fim5x" path="res://Assets/Items/Heart.png" id="3_bjfho"]
+[ext_resource type="Texture2D" uid="uid://ds6gn83xmf0on" path="res://Assets/Items/home.png" id="4_6fbih"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" groups=["hud"]]
 script = ExtResource("1_fccik")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -28,3 +29,25 @@ stretch_mode = 5
 [node name="LivesCount" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "3"
+
+[node name="WinLabel" type="Label" parent="."]
+visible = false
+offset_left = 74.0
+offset_top = 42.0
+offset_right = 345.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 35
+text = "¡Lo lograste!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 375.0
+offset_top = 179.0
+offset_right = 405.0
+offset_bottom = 209.0
+icon = ExtResource("4_6fbih")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

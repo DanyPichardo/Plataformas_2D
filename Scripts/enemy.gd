@@ -11,9 +11,9 @@ var active := false
 func _ready():
 	$HitboxTop.body_entered.connect(_on_top_hit)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not active:
-		var player = get_tree().get_first_node_in_group("Player")
+		var player = get_tree().get_first_node_in_group("player")
 		if player and player.global_position.distance_to(global_position) < activation_distance:
 			active = true
 		if not active:
@@ -37,7 +37,7 @@ func _on_top_hit(body):
 	if is_dead:
 		return
 		
-	if body.is_in_group("Player"):
+	if body.is_in_group("player"):
 		die()
 		body.bounce()
 		
